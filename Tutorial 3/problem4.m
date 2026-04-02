@@ -1,4 +1,4 @@
-% Systems Biology: Calcium Oscillation (Problem 4)
+
 % Parametric Sensitivity Analysis (1D)
 clear; clc; close all;
 
