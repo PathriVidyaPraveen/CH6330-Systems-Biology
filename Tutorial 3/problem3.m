@@ -1,4 +1,4 @@
-% Systems Biology: Calcium Oscillation (Problem 3)
+
 clear; clc; close all;
 
 % 1. Define Constant Parameters
