@@ -40,9 +40,6 @@ title('Phase Plane Analysis (v_{M2} = 5.7)');
 grid on;
 set(gca, 'FontSize', 10);
 
-% =========================================================================
-% ODE Function Definition
-% =========================================================================
 function dydt = lh_model(~, y, p)
     % State variables
     X = y(1); % Cytoplasmic Calcium
