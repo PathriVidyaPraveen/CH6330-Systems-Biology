@@ -58,9 +58,6 @@ xlabel('Time, s');
 xlim([0 2000]);
 set(gca, 'FontSize', 10);
 
-% =========================================================================
-% ODE Function Definition
-% =========================================================================
 function dydt = lh_model(~, y, p)
     % State variables
     X = y(1); % Cytoplasmic Calcium
