@@ -43,9 +43,6 @@ for i = 1:length(v_M2_values)
     end
 end
 
-% =========================================================================
-% Plotting Figure 1: 3D Bar Chart
-% =========================================================================
 figure('Name', 'Problem 5: 3D Bar Chart');
 
 % Plotting M directly maps the high peaks exactly as shown in the document
@@ -70,9 +67,6 @@ zlabel('Maximum Ca^{2+}', 'FontSize', 12);
 view([-37.5 30]); 
 grid on;
 
-% =========================================================================
-% Plotting Figure 2: Surface Plot
-% =========================================================================
 figure('Name', 'Problem 5: Surface Plot');
 
 % To get the exact mismatched alignment seen in the tutorial's surface plot,
@@ -95,9 +89,6 @@ zlabel('Maximum Ca^{2+}', 'FontSize', 12);
 grid on;
 view([-37.5 30]);
 
-% =========================================================================
-% ODE Function Definition
-% =========================================================================
 function dydt = lh_model(~, y, p)
     X = y(1); Y = y(2); Z = y(3); 
     
