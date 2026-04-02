@@ -1,4 +1,4 @@
-% Systems Biology: Calcium Oscillation (Problem 5)
+
 % Parametric Sensitivity Analysis (2D)
 clear; clc; close all;
 
@@ -44,7 +44,7 @@ for i = 1:length(v_M2_values)
 end
 
 % =========================================================================
-% Plotting Figure 1: 3D Bar Chart (Exact replication of document)
+% Plotting Figure 1: 3D Bar Chart
 % =========================================================================
 figure('Name', 'Problem 5: 3D Bar Chart');
 
@@ -71,7 +71,7 @@ view([-37.5 30]);
 grid on;
 
 % =========================================================================
-% Plotting Figure 2: Surface Plot (Exact replication of document)
+% Plotting Figure 2: Surface Plot
 % =========================================================================
 figure('Name', 'Problem 5: Surface Plot');
 
