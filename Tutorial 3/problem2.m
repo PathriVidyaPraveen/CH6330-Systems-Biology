@@ -57,9 +57,6 @@ end
 
 hold off;
 
-% =========================================================================
-% ODE Function Definition
-% =========================================================================
 function dydt = lh_model(~, y, p)
     % State variables
     X = y(1); % Cytoplasmic Calcium
