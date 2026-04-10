@@ -1,7 +1,7 @@
 clear; clc; close all;
 
 % =============================
-% PARAMETERS (same as yours)
+% PARAMETERS
 % =============================
 alpha1 = 0.1;
 alpha2 = 3;
@@ -20,9 +20,9 @@ n2 = 8;
 n3 = 8;
 
 % =============================
-% TIME
+% TIME (KEY PART)
 % =============================
-tspan = [0 50];   % longer to clearly see limit cycle
+t_eval = linspace(0, 25, 20);  
 
 % =============================
 % INITIAL CONDITION
@@ -30,47 +30,54 @@ tspan = [0 50];   % longer to clearly see limit cycle
 y0 = [0.01 0.01 0.01];
 
 % =============================
-% SOLVE ODE
+% SOLVE
 % =============================
 [t, y] = ode45(@(t,y) model3(t,y,alpha1,alpha2,alpha3,...
                             beta1,beta2,beta3,...
-                            K1,K2,K3,n1,n2,n3), tspan, y0);
+                            K1,K2,K3,n1,n2,n3), ...
+               t_eval, y0);
 
 C = y(:,1);
 P = y(:,2);
 A = y(:,3);
 
 % =============================
-% PHASE PLANE PLOTS
+% PLOTS (ALL 3 PHASE PLANES)
 % =============================
 figure;
 
-% ---- CDK vs APC ----
-subplot(1,3,1);
-plot(C, A, 'LineWidth', 2);
-xlabel('CDK');
-ylabel('APC');
-title('Phase: CDK vs APC');
-grid on;
-
 % ---- CDK vs PIK ----
-subplot(1,3,2);
-plot(C, P, 'LineWidth', 2);
-xlabel('CDK');
+subplot(1,3,1);
+plot(C, P, 'b-', 'LineWidth', 1.5); hold on;
+plot(C, P, 'bo', 'MarkerSize', 5);
+xlabel('CDK1');
 ylabel('PIK');
-title('Phase: CDK vs PIK');
+title('CDK1 vs PIK');
 grid on;
+axis([0 0.6 0 0.6]);
+
+% ---- CDK vs APC ----
+subplot(1,3,2);
+plot(C, A, 'b-', 'LineWidth', 1.5); hold on;
+plot(C, A, 'bo', 'MarkerSize', 5);
+xlabel('CDK1');
+ylabel('APC');
+title('CDK1 vs APC');
+grid on;
+axis([0 0.6 0 0.6]);
 
 % ---- PIK vs APC ----
 subplot(1,3,3);
-plot(P, A, 'LineWidth', 2);
+plot(P, A, 'b-', 'LineWidth', 1.5); hold on;
+plot(P, A, 'bo', 'MarkerSize', 5);
 xlabel('PIK');
 ylabel('APC');
-title('Phase: PIK vs APC');
+title('PIK vs APC');
 grid on;
+axis([0 0.6 0 0.6]);
 
 % =============================
-% ODE FUNCTION
+% MODEL
 % =============================
 function dydt = model3(~, y, alpha1, alpha2, alpha3, ...
                              beta1, beta2, beta3, ...
